@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import messageParser from './messageParser';
+import Messages from './Messages'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      inputData: {
+        messages: []
+      }
+    }
+  }
+
+  parse() {
+    this.setState({inputData: messageParser(this.refs.textArea.value)})
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <textarea ref='textArea'></textarea>
+        <button onClick={this.parse.bind(this)}>Vai!</button>
+        <Messages data={this.state.inputData}/>
       </div>
     );
   }

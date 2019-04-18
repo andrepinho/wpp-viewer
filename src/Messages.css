@@ -1,0 +1,44 @@
+.Messages {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.Messages ul {
+  list-style: none;
+}
+
+.Messages ul li {
+
+}
+
+.MessageItem {
+  overflow: auto;
+  display: flex;
+  margin-bottom: 30px
+  /*flex-direction: column;*/
+}
+
+.MessageItem.one {
+  justify-content: flex-end
+}
+
+.MessageItem.one > div {
+  background: #ccc;
+}
+
+.MessageItem.two > div {
+  background: blue;
+}
+
+.MessageItem-name {
+
+}
+
+.MessageItem-message {
+  /*background: #ccc;*/
+  padding: 5px;
+}
+
+.MessageItem-info {
+
+}
